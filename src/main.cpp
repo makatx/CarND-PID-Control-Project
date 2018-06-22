@@ -35,9 +35,9 @@ int main()
   PID pid;
   // TODO: Initialize the pid variable.
   double Kp, Ki, Kd;
-  Kp = 0.2;
+  Kp = 0.15;
   Ki = 0.05;
-  Kd = 6.0;
+  Kd = 5.0;
   pid.Init(Kp, Ki, Kd);
   std::cout << "Initiatized with P | I | D: " << pid.Kp ;
   std::cout << " | "<< pid.Ki << " | " << pid.Kd <<std::endl;
