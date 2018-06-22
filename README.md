@@ -29,3 +29,10 @@ This combination of P, I and D values strives to keep the turning smooth at the 
 **P | I | D :: 0.15 | 0.05 | 5**
 
 **In summary,** responsiveness to the turn requirement is controlled by the *P* parameter while the *D* parameter controls excessive turns caused by the *P* while at the same time providing strong feedback for sharp turns. Finally, the *I* parameter maintains the overall CTE for the duration of the trip.
+
+## Hyperparameters Selection
+As explained above, the parameters were chosen manually to fit the requirement of keeping the CTE low and the vehicle on the road as much as possible, close to the center. Other approach to finding the parameters could have been using the Twiddle algorithm. Indirectly though, the lessons on Udacity by Sebastian and their corresponding code exercises(using twiddle) did hint on the proportion of these parameters, which made tuning them easier.
+
+## Possible improvements
+In this controller we are trying to match the expected trajectory and actuating according to the error witnessed after a time step. I believe a better approach would be to first predict the error itself for the next time step and then work towards minimizing it, instead of moving the vehicle first. This way, the turning would then be much smoother and would also minimize CTE further since we are not waiting for the CTE to get larger before acting.
+  
